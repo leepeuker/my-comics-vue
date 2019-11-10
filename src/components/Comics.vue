@@ -6,7 +6,7 @@
   </div>
 </template>
 
-<script>/*eslint no-console: ["error", { allow: ["warn", "error"] }] */
+<script>/*eslint no-console: ["error", { allow: ["log", "warn", "error"] }] */
     import ComicItem from './ComicItem.vue';
     import axios from 'axios';
 
