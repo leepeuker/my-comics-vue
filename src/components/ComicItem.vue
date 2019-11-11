@@ -1,16 +1,16 @@
 <template>
   <div class="todo-item">
     <p>
-      {{comic.name}}
+      {{comic.volume.name}} - {{comic.name}}
     </p>
   </div>
 </template>
 
-<script>
-    export default {
-        name: "ComicItem",
-        props: ["comic"]
-    };
+<script>/*eslint no-console: ["error", { allow: ["log", "warn", "error"] }] */
+export default {
+    name: "ComicItem",
+    props: ["comic"]
+};
 </script>
 
 <style scoped>

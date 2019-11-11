@@ -1,21 +1,34 @@
 <template>
   <div id="app">
     <Header/>
-    <Comics />
+    <AddComic v-on:add-comic="addComic"/>
+    <Comics/>
   </div>
 </template>
 
-<script>
-    import Comics from './components/Comics';
-    import Header from './components/layout/Header';
+<script>/*eslint no-console: ["error", { allow: ["log", "warn", "error"] }] */
+import Comics from './components/Comics';
+import AddComic from './components/AddComic.vue';
+import Header from './components/layout/Header';
+import axios from 'axios';
 
-    export default {
-        name: 'app',
-        components: {
-            Header,
-            Comics
+export default {
+    name: 'app',
+    components: {
+        Header,
+        AddComic,
+        Comics
+    },
+    methods: {
+        addComic(comicVineId) {
+            axios.post('http://192.168.0.8/comics', {comicVineId: comicVineId})
+                .then(res => {
+                    console.log(res.data)
+                })
+                .catch(err => console.error(err))
         }
     }
+}
 </script>
 
 <style>
